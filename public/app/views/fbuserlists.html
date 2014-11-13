@@ -1,0 +1,92 @@
+﻿ <script>
+     $(function () {
+         $("#datepicker").datepicker();
+     });
+  </script>  
+
+   <table class="table table-hover table-striped table-condensed table-bordered"  >
+                <tr><td><div>Hello Welcome <b>{{ loginUser }}</b> !!</div></td>
+                    <td><button class="btn btn-danger" ng-click="logout()">Logout</button></td>
+                </tr>
+        </table>   
+        
+    <table class="table table-hover table-striped table-condensed table-bordered"  >
+    <thead>
+        <tr>
+            <th>Age</th>  
+            <th>DOB</th>                                      
+            <th>Employment Type</th>                                      
+            <th>First Name</th>                                      
+            <th>Gender</th>                                      
+            <th>Last Name</th>                                      
+            <th>Email</th>                                      
+        </tr>
+    </thead>
+    <tbody>      
+      <tr class="success" ng-repeat="message in messages">            
+            <td>
+              {{message.age}}
+            </td>
+            <td>
+                {{message.dob}}
+            </td>
+            <td>
+                {{message.employmenttype}} 
+            </td>
+            <td>
+                {{message.firstname}} 
+
+            </td>
+            <td>
+                {{message.lastname}}
+
+            </td>
+             <td>
+                {{message.gender}} 
+
+            </td>
+            <td>
+                {{message.email}}
+            </td>
+            <td>                 
+                <a class="btn btn-primary" href="/index.html#/fbupdate/{{message.id}}">Update</a>
+                <button class="btn btn-danger" ng-click="deleteuser(message.id)">Delete</button> 
+            </td>            
+        </tr>
+    </tbody>
+
+    <form class="form-horizontal">
+        <h4> Create Form </h4>         
+        First Name<br />
+        <input type="text" ng-model="user.firstname" /><br />        
+        Last Name<br />
+        <input type="text" ng-model="user.lastname" /><br />        
+        Gender: <br />
+        <input type="radio" ng-model="user.gender" value="male" />&nbsp;male
+        &nbsp;
+        <input type="radio" ng-model="user.gender" value="female" />&nbsp;female
+        <br />
+        <br />
+        Age (minimum 18, maximum 65)<br />
+        <input type="text" ng-model="user.age" />
+        <br />
+        DOB <br />
+        <!--<input type="text" ng-model="user.dob" />-->
+        <input type="text" id="datepicker" ng-model="user.dob">
+        <br />
+        Employment Type <br />
+        <!--<input type="text" ng-model="user.emptype" />-->
+        <select ng-model="user.emptype">
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>        
+        </select>
+        <br />
+        Email <br />
+        <input type="text" ng-model="user.email" />
+        <br />
+        <br />
+        <button class="btn btn-primary" ng-click="adduser()">Add User</button>          
+        <button class="btn btn-primary" ng-click="clickCancel()" >Cancel</button>  
+        <br />
+        <br />
+    </form>

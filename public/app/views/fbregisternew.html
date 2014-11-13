@@ -1,0 +1,69 @@
+  <style>
+    .container { }
+
+#error {
+    color: #f00;
+    font-weight: bold;
+}
+
+.input-box {
+    width: 100%;
+    height: 40px;
+}
+
+.btn {
+    padding: 10px;
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.container ul li {
+    margin-bottom: 5px;
+}
+
+.container ul .input-box {
+    margin-bottom: 10px;
+}
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+ </style>
+
+<div class="container">
+    <p id="error"></p>
+    <div id="login" class="view active">
+        <ul>
+            <li>
+                <input id="txtEmail" class="input-box" type="text" placeholder="Email" />
+            </li>
+            <li>
+                <input id="txtPass" class="input-box" type="password" placeholder="Password" />
+            </li>
+            <li>              
+                <label for="chkRegister">
+                    <input id="chkRegister" type="checkbox" value="Register" checked /> Register
+                </label>
+
+            </li>
+            <li>
+                <button id="btAction" class="btn">Register</button>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="userInfo" class="view">
+        <h4>Connect to ..Angular..</h4>
+        <button id="btLogout" class="btn">Logout</button>
+        <ul id="userList">            
+        </ul>
+    </div>
+    
+</div>

@@ -1,0 +1,141 @@
+
+<script>
+ var list = ['a','b','c','d','e'] ;
+
+            for (item in list){
+                //console.log ('item value: ' + item);
+                var a =$('<a>' + item + '</a></br>' ) ;
+                 //alert ("hello" + a);
+                $(a).click(function(ev){
+                alert ("Youc clikced item " + item);
+            });
+            //$(document.body).append(a);  
+          }
+  </script>
+
+    <table class="table table-hover table-striped table-condensed table-bordered"  >
+            <tr>            
+            <td><div>Welcome <b>{{ loginUser }}</b> !!</div></td>
+            <td><button class="btn btn-danger" ng-click="logout()">Logout</button></td>
+            <td><a href="#/fbhomeforsaleadd/" class="btn btn-primary" ><b>Home For Sale -Add</b></a></td>
+            <td><a href="#/fbhomeforsaleread/" class="btn btn-primary" ><b>Home For Sale -List</b></a></td>  
+            <td><a href="#/fbupload/" class="btn btn-primary" ><b>Upload -File</b></a></td>  
+            </tr>
+    </table>  
+<br/>
+<input type="text" ng-model="hfsFilter" placeholder="Search for any column..." class="input-xlarge input-medium search-query" />
+<i class="icon-search"></i>
+<br/>
+<br/> 
+<hr>
+
+
+
+<table class="table table-hover table-striped table-condensed table-bordered"  >
+    <thead>
+        <tr>
+            <th>Address1</th>  
+            <th>Address2</th>                                      
+            <th>City</th>                                      
+            <th>State</th>                                      
+            <th>Zip</th>                                      
+            <th>Total SQFT</th>                                      
+            <th>No of Floors</th>
+            <th>No of Bedrooms</th>                 
+            <th>No of Bathrooms</th>
+            <th>Home Type</th>
+            <th>Year on Build</th>
+            <th>Access to Airport</th>
+            <th>Access to Seashore</th>
+            <th>Estimated Property Tax</th>
+            <th>Estimated Association Fee</th>                                   
+        </tr>
+    </thead>
+    <tbody>      
+
+      <tr class="success" ng-repeat="message in messages| filter:hfsFilter">   
+            
+            <td>
+              {{message.address1}}
+            </td>
+            <td>
+                {{message.address2}}
+            </td>
+            <td>
+                {{message.city}} 
+            </td>
+            <td>
+                {{message.state}} 
+
+            </td>
+            <td>
+                {{message.zip}}
+
+            </td>
+             <td>
+                {{message.sqft}} 
+
+            </td>
+            <td>
+                {{message.nooffloors}}
+            </td>
+            <td>
+                {{message.noofbedrooms}}
+            </td>
+            <td>
+                {{message.noofbathrooms}}
+            </td>
+            <td>
+                {{message.hometype}}
+            </td>
+            <td>
+                {{message.yearonbuild}}
+            </td>
+            <td>
+                {{message.accesstoairport}}
+            </td>
+            <td>
+                {{message.accesstoseashore}}
+            </td>
+            <td>
+                {{message.estimatedpropertytax}}
+            </td>
+            <td>
+                {{message.estimatedassociationfee}}
+            </td>
+            
+            <td> 
+                <a class="btn btn-primary" href="/index.html#/fbhfsreaddetail/{{message.$id}}">Detail</a> 
+                <a class="btn btn-primary" href="/index.html#/fbhomeforsaleupdate/{{message.$id}}">Update</a>
+                <button class="btn btn-danger" ng-click="DeleteHFS(message.$id)">Delete</button>
+            </td>            
+        </tr>
+    </tbody>
+    <tfoot>
+            <td colspan="8">
+                <div class="pagination pull-right">
+                    <ul>
+                        <li ng-class="">
+                            <a href ng-click="firstPage(1)">First</a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == 1}">
+                            <a href ng-click="prevPage()"><< Prev</a>
+                        </li>                               
+                        <li ng-repeat="n in range(buttonstoDisplay)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="pageChanged(n)">
+                            <a href ng-bind="n"></a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == totalPagestoBrowse}">
+                            <a href ng-click="nextPage()">Next >></a>
+                        </li>
+                        <li >
+                            <a href ng-click="lastPage(totalPagestoBrowse)">Last</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tfoot>
+
+</table> 
+<br>

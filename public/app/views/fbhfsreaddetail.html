@@ -1,0 +1,82 @@
+        <table class="table table-hover table-striped table-condensed table-bordered"  >
+                <tr>
+                <td><div>Welcome <b>{{ loginUser }}</b> !!</div></td>
+                    <td><button class="btn btn-danger" ng-click="logout()">Logout</button></td>
+                    <td><a href="#/fbhomeforsaleadd/" class="btn btn-primary" ><b>Home For Sale -Add</b></a></td>
+                    <td><a href="#/fbhomeforsaleread/" class="btn btn-primary" ><b>Home For Sale -List</b></a></td>                       
+                </tr>
+    </table>   
+        <h4> Home For Sale -Detail </h4><br />
+        Address1<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.address1" ng-model="hfsdetailsbyID.address1" /><br />        
+        
+        Address2<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.address2" ng-model="hfsdetailsbyID.address2" /><br />       
+        
+        City<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.city" ng-model="hfsdetailsbyID.city" /><br />        
+        
+        State-{{returnRecordForUpdate.state}}<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.state" ng-model="hfsdetailsbyID.state" /><br />        
+
+        Zip <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.zip" ng-model="hfsdetailsbyID.zip" /><br />
+        
+        Total SQFT <br />        
+        <input type="text" ng-readonly= "hfsdetailsbyID.sqft" ng-model="hfsdetailsbyID.sqft" /><br />
+                
+        No of Floors <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.nooffloors" ng-model="hfsdetailsbyID.nooffloors" /><br />
+        
+        No of Bedrooms <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.noofbedrooms" ng-model="hfsdetailsbyID.noofbedrooms" /><br />
+                
+        No of Bathrooms <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.noofbathrooms" ng-model="hfsdetailsbyID.noofbathrooms" /><br />        
+        
+        Home Type <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.hometype" ng-model="hfsdetailsbyID.hometype" /><br />        
+        
+        Year on Build <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.yearonbuild" ng-model="hfsdetailsbyID.yearonbuild" /><br />        
+        
+        Access to Airport <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.accesstoairport" ng-model="hfsdetailsbyID.accesstoairport" /><br />        
+
+        Access to Seashore <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.accesstoseashore" ng-model="hfsdetailsbyID.accesstoseashore" /><br />        
+        
+        Estimated Property Tax per Month<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.estimatedpropertytax" ng-model="hfsdetailsbyID.estimatedpropertytax" /><br />        
+
+        Estimated Association Fee per Month<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.estimatedassociationfee" ng-model="hfsdetailsbyID.estimatedassociationfee" /><br />        
+
+        Community Amenities, if any <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.communityamenities" ng-model="hfsdetailsbyID.communityamenities" /><br />        
+        
+        Are the floors are above ground? <br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.arethefloors" ng-model="hfsdetailsbyID.arethefloors" /><br />
+
+        Internet Facility<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.internetfacility" ng-model="hfsdetailsbyID.internetfacility" /><br />
+
+        Cooking Gas Facility<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.cookinggas" ng-model="hfsdetailsbyID.cookinggas" /><br />
+
+        County Water and Sewer Facility<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.countywater" ng-model="hfsdetailsbyID.countywater" /><br />       
+
+        Car Parking Facility<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.carparking" ng-model="hfsdetailsbyID.carparking" /><br />      
+
+        AC and Heater Facility<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.acandheater" ng-model="hfsdetailsbyID.acandheater" /><br />
+                
+        Carpet Area of the building(%)<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.carpetarea" ng-model="hfsdetailsbyID.carpetarea" /><br />        
+        
+        Hard wood area of the building(%)<br />
+        <input type="text" ng-readonly= "hfsdetailsbyID.hardwoodarea" ng-model="hfsdetailsbyID.hardwoodarea"  /><br />
+        <br>
+        <button class="btn btn-primary" ng-click="goBack()">Go Back</button> 

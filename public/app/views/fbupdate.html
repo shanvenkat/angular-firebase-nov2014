@@ -1,0 +1,44 @@
+﻿    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+  </script>  
+
+    <table class="table table-hover table-striped table-condensed table-bordered"  >
+                <tr><td><div>Hello Welcome <b>{{ loginUser }}</b> !!</div></td>
+                    <td><button class="btn btn-danger" ng-click="logout()">Logout</button></td>
+                </tr>
+    </table> 
+
+    First Name <br />
+    <input type="text"  ng-model="returnRecordForUpdate.firstname">
+    <br />
+    Last Name <br />
+    <input type="text" ng-model="returnRecordForUpdate.lastname">
+    <br />
+    Gender: <br />
+    <input type="radio" ng-model="returnRecordForUpdate.gender" value="male" />&nbsp;male
+    &nbsp;
+    <input type="radio" ng-model="returnRecordForUpdate.gender" value="female" />&nbsp;female
+    <br />
+    <br />    
+    Age <br />
+    <input type="text" ng-model="returnRecordForUpdate.age">  
+    <br />
+    DOB <br />
+   <input type="text" id="datepicker" ng-model="returnRecordForUpdate.dob">
+   
+    <br />
+    Employment Type <br />
+    <select ng-model="returnRecordForUpdate.employmenttype">
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>        
+    </select>
+    <br />
+    Email <br />
+    <input type="text" ng-model="returnRecordForUpdate.email">
+    <br />
+    <button class="btn" ng-click="clickCancel()" >Cancel</button> 
+    <button class="btn btn-primary" ng-click="updateuser(returnRecordForUpdate.firstname, returnRecordForUpdate.lastname,returnRecordForUpdate.gender, returnRecordForUpdate.age, returnRecordForUpdate.dob, returnRecordForUpdate.employmenttype, returnRecordForUpdate.email )">Update</button>
+    <br />
+    <br />    

@@ -1,0 +1,71 @@
+  <style>
+    .container { }
+
+#error {
+    color: #f00;
+    font-weight: bold;
+}
+
+.input-box {
+    width: 100%;
+    height: 40px;
+}
+
+.btn {
+    padding: 10px;
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.container ul li {
+    margin-bottom: 5px;
+}
+
+.container ul .input-box {
+    margin-bottom: 10px;
+}
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+.errormsg {
+    color: red;
+    font-weight: bold;
+} 
+ </style>
+
+<table class="table table-hover table-striped table-condensed table-bordered"  >
+        <tr>
+        <td><li class="active"><a href="#/fbregister/" ><b>Sign Up</b></a></li></td>
+        <td><li class="active"><a href="#/fblogin/"><b>Sign In</b></a></li></td>        
+        </tr>
+</table>
+
+<div class="container">
+    <p id="error"></p>
+    <div id="login" class="view active">
+        <ul>
+            <li>
+                <input type="text" placeholder="Enter Email address"  ng-model="login.email" />
+            </li>
+            <li>
+                <input type="password" placeholder="Enter Password" ng-model="login.password" />
+            </li>            
+            <li>
+                <button id="btRegister" class="btn" ng-click="clickLogin()">Login</button>
+                <button id="btCancel" class="btn" ng-click="clickCancel()">Cancel</button>         
+            </li>
+        </ul>
+    </div>   
+    <div id="login" class="errormsg">
+        {{errorMessage}}
+    </div>
+</div>
+

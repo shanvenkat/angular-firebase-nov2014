@@ -1,0 +1,258 @@
+ <script>
+     $(function () {
+         $("#datepicker").datepicker();
+     });
+  </script>
+    <table class="table table-hover table-striped table-condensed table-bordered"  >
+        <tr><td><div>Welcome <b>{{loginUser}}</b> !!</div></td>
+            <td><button class="btn btn-danger" ng-click="logout()">Logout</button></td>
+            <td><a href="#/fbhomeforsaleadd/" class="btn btn-primary"><b>Home For Sale -Add</b></a></td>
+            <td><a href="#/fbhomeforsaleread/" class="btn btn-primary"><b>Home For Sale -List</b></a></td>                    
+        </tr>
+    </table> 
+
+    <form class="form-horizontal">
+        <h4> Home For Sale Entry Form </h4>         
+        Address1<br />
+        <input type="text" ng-model="hfs.address1" /><br />        
+        Address2<br />
+        <input type="text" ng-model="hfs.address2" /><br />       
+        City<br />
+        <input type="text" ng-model="hfs.city" /><br />
+       
+        State<br />
+        <select  ng-model="hfs.state">
+            <option value="AK">Alaska</option>
+            <option value="AL">Alabama</option>
+            <option value="AR">Arkansas</option>
+            <option value="AS">American Samoa</option>
+            <option value="AZ">Arizona</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DC">District of Columbia</option>
+            <option value="DE">Delaware</option>
+            <option value="FL">Florida</option>
+            <option value="FM">Federated States of Micronesia</option>
+            <option value="GA">Georgia</option>
+            <option value="GU">Guam</option>
+            <option value="HI">Hawaii</option>
+            <option value="IA">Iowa</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MD">Maryland</option>
+            <option value="ME">Maine</option>
+            <option value="MH">Marshall Islands</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MO">Missouri</option>
+            <option value="MP">Northern Mariana Islands</option>
+            <option value="MS">Mississippi</option>
+            <option value="MT">Montana</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="NE">Nebraska</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NV">Nevada</option>
+            <option value="NY">New York</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="PW">Palau</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UM">U.S. Minor Outlying Islands</option>
+            <option value="UT">Utah</option>
+            <option value="VA">Virginia</option>
+            <option value="VI">Virgin Islands of the U.S.</option>
+            <option value="VT">Vermont</option>
+            <option value="WA">Washington</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WV">West Virginia</option>
+            <option value="WY">Wyoming</option>           
+        </select><br />
+
+        <!--<select ng-model="hfs.state">
+            <option value={{state.$value}}  ng-repeat="state in states">{{state.$value}}            
+            </option>        
+        </select><br />-->       
+
+        Zip <br />
+        <input type="text" ng-model="hfs.zip"><br />
+        
+        Total SQFT <br />
+        <select ng-model="hfs.sqft">
+            <option value="0-1000">0-1000</option>
+            <option value="1001-2000">1001-2000</option>
+            <option value="2001-3000">2001-3000</option>        
+            <option value="3001-4000">3001-4000</option>        
+            <option value="More than 4000">More than 4000</option>        
+        </select><br />
+        <!--<select ng-model="hfs.sqft">
+            <option value={{totalsqft.$value}}  ng-repeat="totalsqft in totalsqfts">{{totalsqft.$value}}            
+            </option>        
+        </select><br />-->
+
+
+        No of Floors <br />
+        
+        <select ng-model="hfs.nooffloors">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>        
+            <option value="4">4</option>        
+        </select><br />
+        No of Bedrooms<br />
+        
+        <select ng-model="hfs.noofbedrooms">
+            <option value="1-2">1-2</option>
+            <option value="3-4">3-4</option>
+            <option value="5-6">5-6</option>        
+            <option value="More than 6">More than 6</option>        
+        </select><br />
+        No of Bathrooms <br />
+        
+        <select ng-model="hfs.noofbathrooms">
+            <option value="1-2">1-2</option>
+            <option value="3-4">3-4</option>
+            <option value="5-6">5-6</option>        
+            <option value="More than 6">More than 6</option>        
+        </select><br />
+        Home Type <br />
+        <select ng-model="hfs.hometype">
+            <option value="Apartment">Apartment</option>
+            <option value="Condo">Condo</option>
+            <option value="Town Home">Town Home</option>        
+            <option value="Singly Family">Singly Family</option>        
+        </select><br />
+        Year on Build <br />
+        
+        <input type="text" id="datepicker" ng-model="hfs.yearonbuild"><br />
+        Access to Airport <br />
+        
+        <select ng-model="hfs.accesstoairport">
+            <option value="0-25">0-25</option>
+            <option value="26-50">26-50</option>
+            <option value="51-75">51-75</option>        
+            <option value="76-100">76-100</option>        
+            <option value="More than 100">More than 100</option>        
+        </select><br />
+
+        Access to Seashore <br />
+        
+        <select ng-model="hfs.accesstoseashore">
+            <option value="0-25">0-25</option>
+            <option value="26-50">26-50</option>
+            <option value="51-75">51-75</option>        
+            <option value="76-100">76-100</option>        
+            <option value="More than 100">More than 100</option>        
+        </select><br />
+        Estimated Property Tax per Month <br />
+        
+        <select ng-model="hfs.estimatedpropertytax">
+            <option value="0-200">0-200</option>
+            <option value="201-400">201-400</option>
+            <option value="401-600">401-600</option>        
+            <option value="601-800">601-800</option>       
+            <option value="801-1000">801-1000</option>       
+            <option value="More than 1000">More than 1000</option>        
+        </select><br />
+        Estimated Association Fee per Month<br />
+        
+        <select ng-model="hfs.estimatedassociationfee">
+            <option value="0-100">0-100</option>
+            <option value="101-200">101-200</option>
+            <option value="201-300">201-300</option>        
+            <option value="301-400">301-400</option>       
+            <option value="401-500">401-500</option>       
+            <option value="More than 500">More than 500</option>        
+        </select><br />
+
+        Community Amenities, if any <br />
+        
+        <select ng-model="hfs.communityamenities">
+            <option value="Picnic Park">Picnic Park</option>
+            <option value="Community Hall">Community Hall</option>
+            <option value="Kids Play Area">Kids Play Area</option>        
+            <option value="Basket Ball Court">Basket Ball Court</option>       
+            <option value="Tennis Court">Tennis Court</option>       
+            <option value="Exercise Gym">Exercise Gym</option>        
+            <option value="Swimming Pool">Swimming Pool</option>        
+        </select><br />
+        
+        All the floors are above ground? <br />
+       <select ng-model="hfs.arethefloors">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>            
+        </select><br />
+        Internet Facility<br />
+        <select ng-model="hfs.internetfacility">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>            
+        </select><br />
+        
+        Cooking Gas Facility<br />
+        <select ng-model="hfs.cookinggas">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>            
+        </select><br />
+        
+        County Water and Sewer Facility<br />
+         <select ng-model="hfs.countywater">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>            
+        </select><br />
+        Car Parking Facility<br />
+         <select ng-model="hfs.carparking">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>            
+        </select><br />
+        AC and Heater Facility<br />
+        
+        <select ng-model="hfs.acandheater">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>            
+        </select><br />        
+        Carpet Area of the building(%)<br />
+        
+        <select ng-model="hfs.carpetarea">
+            <option value="25">25</option>
+            <option value="50">50</option>                        
+            <option value="75">75</option>
+            <option value="100">100</option>                        
+        </select><br />        
+        Hard wood area of the building(%)<br />
+        
+        <select ng-model="hfs.hardwoodarea">
+            <option value="25">25</option>
+            <option value="50">50</option>                        
+            <option value="75">75</option>
+            <option value="100">100</option>                        
+        </select><br />
+        <br />  
+        <!--File Upload Testing ..<input type="file" id="uploader" /><br />-->
+
+         <div class="row">
+            <label for="fileToUpload">Select a File to Upload</label><br />
+            <input type="file" ng-model-instant id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)" />
+        </div>
+
+        <br />  
+        <br />
+        <button class="btn btn-primary" ng-click="uploadFile()">Upload File</button>
+        <button class="btn btn-primary" ng-click="addhfs()">Home For Sale -Add</button>          
+        <button class="btn btn-primary" ng-click="clickCancel()" >Cancel</button>  
+        
+    </form>

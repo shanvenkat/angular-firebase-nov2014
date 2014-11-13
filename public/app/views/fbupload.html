@@ -1,0 +1,24 @@
+ <script>
+     $(function () {
+         $("#datepicker").datepicker();
+     });
+  </script>
+    <table class="table table-hover table-striped table-condensed table-bordered"  >
+        <tr><td><div>Welcome <b>{{loginUser}}</b> !!</div></td>
+            <td><button class="btn btn-danger" ng-click="logout()">Logout</button></td>
+            <td><a href="#/fbhomeforsaleadd/" class="btn btn-primary"><b>Home For Sale -Add</b></a></td>
+            <td><a href="#/fbhomeforsaleread/" class="btn btn-primary"><b>Home For Sale -List</b></a></td>                    
+        </tr>
+    </table> 
+
+    <form class="form-horizontal">       
+
+         <div class="row">
+            <label for="fileToUpload">Select a File to Upload</label>
+            <input type="file" file-model="myFile"/>
+        <br />  
+        <br />
+        <button class="btn btn-primary" ng-click="uploadFile()">Upload File</button>        
+        </div>        
+        <br />        
+    </form>
